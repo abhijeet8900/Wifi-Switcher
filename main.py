@@ -24,7 +24,9 @@ def main():
             newSSID = bestNetwork.get("SSID")
             if currentSSID != newSSID:
                 log(f'Better netwok found : {bestNetwork.get("SSID")} [{bestNetwork.get("Signal")}] ')
-                connectToNetwork(newSSID)
+                status = connectToNetwork(newSSID)
+                if status == 0:
+                    wifi.notify(f'Switched to {bestNetwork.get("SSID")}')
             else: 
                 log(f'Cannot find better network')
         else: 

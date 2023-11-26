@@ -27,4 +27,4 @@ def getBestNetwork(currentNetwork: dict, allNetworks: list[dict], knownNetworks:
 
 def connectToNetwork(ssid: str):
     log(f'Connecting to network : {ssid}')
-    os.system(f'''cmd /c "netsh wlan connect name = {ssid}"''')
+    return os.system(f'''cmd /c "netsh wlan connect name = {ssid}"''')

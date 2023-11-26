@@ -1,7 +1,7 @@
 
 import subprocess
 from .IOperatingSystem import IOperatingSystem
-
+from win11toast import toast
 
 class Windows(IOperatingSystem):
 
@@ -94,3 +94,6 @@ class Windows(IOperatingSystem):
             profileName = profileName.strip()
             networkProfiles.append(profileName)
         return networkProfiles
+    
+    def notify(self,message):
+        toast('Wifi Switcher',  message)
